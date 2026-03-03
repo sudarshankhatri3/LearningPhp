@@ -25,7 +25,28 @@
     }
 
 
-    // create an instance of class 
-    $user=new User("sudarshan","khatri",23,"single",232323);
-    echo $user.UserDetail();
+   
+    class UserBehavior extends User{
+        public $behav=true;
+        private $sex;
+
+        public function __construct($firstName, $lastName, $age, $maritalStatus, $balance,$behav)
+        {
+            parent::__construct($firstName, $lastName, $age, $maritalStatus, $balance);
+            $this->behav=$behav;
+        }
+
+        public function behavior(){
+            return "iam ,{$this->maritalStatus} and ,{$this->behav}";
+        }
+    }
+
+     // create an instance of class 
+    $user=new UserBehavior("sudarshan","khatri",23,"single",232323,"gay");
+    echo $user->behavior().PHP_EOL;
+
+
+    
+
+
 ?>
