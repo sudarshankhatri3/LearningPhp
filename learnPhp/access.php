@@ -36,6 +36,11 @@
             $this->behav=$behav;
         }
 
+        function __destruct()
+        {
+            echo "Name :,{$this->firstName} and ,{$this->lastName}";
+        }
+
         public function behavior(){
             return "iam ,{$this->maritalStatus} and ,{$this->behav}";
         }
