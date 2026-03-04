@@ -19,6 +19,17 @@
      reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
      )";
     
+    if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['submit'])){
+        $firstName=htmlspecialchars($_POST["FirstName"]);
+        $lastName=htmlspecialchars($_POST["Lastname"]);
+        $email=htmlspecialchars($_post["email"]);
+
+
+        echo "firstName:",$firstName;
+        echo "lastName:",$lastName;
+        echo "email:",$email;
+    }
+
     if($conn->query($sql)===True){
         echo "table connected sucessfully";
     }else{
