@@ -22,7 +22,7 @@
     if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['submit'])){
         $firstName=htmlspecialchars($_POST["FirstName"]);
         $lastName=htmlspecialchars($_POST["Lastname"]);
-        $email=htmlspecialchars($_post["email"]);
+        $email=htmlspecialchars($_POST["email"]);
 
 
         echo "firstName:",$firstName;
